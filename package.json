@@ -4,7 +4,7 @@
     "description": "starter files for basic development and production using React, Babel, Webpack",
     "main": "index.js",
     "scripts": {
-        "start": "webpack-dev-server --progress",
+        "start": "webpack",
         "test": "jest",
         "debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js",
         "webpack": "webpack",
