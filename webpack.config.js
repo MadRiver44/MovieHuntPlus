@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const presetConfig = require('./build-utils/loadPresets');
 const webpackMerge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
   return webpackMerge({
@@ -42,6 +43,9 @@ module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
     plugins: [
       new HtmlWebpackPlugin({ template: 'src/index.html' }),
       new webpack.HotModuleReplacementPlugin(),
+      new UglifyJsPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
     ],
   });
 };
