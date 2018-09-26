@@ -4,6 +4,8 @@
     "description": "starter files for basic development and production using React, Babel, Webpack",
     "main": "index.js",
     "scripts": {
+        "start": "webpack-dev-server --progress",
+        "build": "NODE_ENV=production webpack -p --config ./webpack.config.production.js --progres",
         "test": "jest",
         "debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js",
         "webpack": "webpack",
